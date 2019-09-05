@@ -1,0 +1,48 @@
+{
+  "name": "git-godo",
+  "version": "0.1.0",
+  "description": "git utils for an automated workflow",
+  "main": "index.js",
+  "author": "Simon Groenborg <groenborg27@gmail.com>",
+  "license": "MIT",
+  "bin": {
+    "git-godo": "bin/git-godo"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "CLI",
+    "git",
+    "typescript"
+  ],
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "commander": "^3.0.1",
+    "esm": "^3.2.25",
+    "inquirer": "^6.5.1",
+    "shelljs": "^0.8.3",
+    "typescript": "^3.5.3"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^6.5.0",
+    "@types/node": "^12.7.2",
+    "@types/shelljs": "^0.8.5",
+    "@types/jest": "24.0.15",
+    "jest": "^24.9.0",
+    "ts-jest": "24.0.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "testMatch": [
+      "**/**/*.test.(ts|tsx)"
+    ],
+    "collectCoverage": true
+  }
+}
