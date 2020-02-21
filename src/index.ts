@@ -1,18 +1,18 @@
 import program from 'commander';
-import { cleanupCommand } from './src/commands/cleanup';
+import { cleanupCommand } from './commands/cleanup';
 import shell from 'shelljs';
+import chalk from 'chalk';
+import { statusCommand } from './commands/status';
 const packageJson = require('../package.json');
 
 export function cli() {
-  //program
-  //  .command('workon <issue>')
-  //  .alias('w')
-  //  .description('lol')
-  //  .option('-c, --create', 'create issue')
-  //  .action((args: any) => {
-  //    status();
-  //    console.log('');
-  //  });
+  program
+    .command('workon')
+    .arguments('[issue]')
+    .alias('w')
+    .description('lol')
+    .option('-c, --create', 'create issue')
+    .action(statusCommand);
   //
   //program
   //  .command('wrapup')
@@ -44,10 +44,13 @@ export function cli() {
       }),
     );
 
+  program.description('asdkjlasjdlkasjdklasjkl')
+  
   program
     .command('status')
     .alias('s')
-    .description('');
+    .description('Shows the status of issues and workspaces')
+    .action(statusCommand)
 
   if (!process.argv.slice(2).length) {
     program.help();
